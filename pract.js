@@ -6,7 +6,10 @@ jQuery(document).ready(function() {
   $.ajax("doc.txt") //me devolverá un objeto promise (jqXHR, en este caso es solo texto)
     .done(function(data){
       $("#externo").append(data); //También valdria .html(data)
-    });
+    })
+    //.fail(function() {
+      //$("#externo").append("HA HABIDO UN ERROR");
+    //});
 
     /* OTRA SOLUCION PRIMERA PARTE
     $.ajax({
@@ -23,7 +26,11 @@ jQuery(document).ready(function() {
         .done(function(data){
           $("#externo").html("");
           $("#externo").append(data);
-        });
+        })
+        //.fail(function() {
+          //$("#externo").html("");
+          //$("#externo").append("HA HABIDO UN ERROR Y NO HAY MAGIA");
+        //});
   });
 
 });
